@@ -46,11 +46,11 @@ Note this application was tested in python3, so make sure you are running it on 
 _____________________
 |username | password |
 |____________________|
-|admin 	 |  password |
+|admin 	  | password |
 |____________________|
-|user1    |  myapp   |
+|user1    | myapp    |
 |____________________|
-| jojo	 |  myapp    |
+|jojo	  | myapp    |
 |____________________|
 ```
 
