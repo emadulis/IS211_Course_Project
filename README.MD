@@ -42,10 +42,17 @@ Note this application was tested in python3, so make sure you are running it on 
 
 
 ## Permitted users
-- Username 	Password
-- admin 	password
-- user1     myapp
-- jojo	    myapp
+```
+_____________________
+|username | password |
+|____________________|
+|admin 	 |  password |
+|____________________|
+|user1    |  myapp   |
+|____________________|
+| jojo	 |  myapp    |
+|____________________|
+```
 
 
 
