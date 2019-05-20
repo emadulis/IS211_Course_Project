@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            background-color: #2F4F4F;
+            color: #FFFFFF;
+        }
+
+        table {
+            width: 55%;
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        th {
+            background-color: #142857;
+            color: #ffffff;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            text-align: left;
+        }
+
+        td {
+            background-color: #0d2618;
+            color: #ffffff;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+        }
+
+        a:link {
+            color: #bfff00;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #bfff00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #66ff66;
+            text-decoration: none;
+        }
+    </style>
+    <title>Book Catalogue Application</title>
+</head>
+
+<body>
+    <h2>Book Store</h2>
+    {% if error %}<p class="error"><strong>Error:</strong>{{ error }}</p>{% endif %}
+    {% if books %}
+    <table>
+        <thead>Books</thead>
+        <tbody>
+            <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Page Count</th>
+                <th>Average Rating</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td><img src={{ book.thumbnail }}></td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.pagecount }}</td>
+                <td>{{ book.averagerating }}</td>
+                <td><a
+                        href={{ url_for('delete_book', title=book.title, author=book.author, pageCount=book.pagecount, averageRating=book.averagerating, thumbnail=book.thumbnail) }}>Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Currently no books available in your book shelves.</p>
+    {% endif %}
+    <a href="/search">Click here to search for books</a>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            background-color: #45072f;
+            color: #FFFFFF;
+        }
+
+        table {
+            width: 55%;
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        th {
+            background-color: #142857;
+            color: #ffffff;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            text-align: left;
+        }
+
+        td {
+            background-color: #0d2618;
+            color: #ffffff;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+        }
+
+        a:link {
+            color: #66ff66;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #66ff66;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #66ff66;
+            text-decoration: none;
+        }
+    </style>
+    <title>Books Catalogue Application</title>
+</head>
+
+<body>
+    <h2>Search books by ISBN # or the Title</h2>
+    {% if error %}<p class="error"><strong>Error:</strong>{{ error }}</p>{% endif %}
+    <form action="/search" method="post">
+        ISBN #:
+        <input type="text" name="isbnnumber">
+        <input type="submit" value="Search">
+    </form>
+    <form action="/searchbytitle" method="post">
+        Title:
+        <input type="text" name="searchtitle">
+        <input type="submit" value="Search">
+    </form>
+    {% if quaried %}
+    <br>
+    <table>
+        <thead>Quary</thead>
+        <tbody>
+            <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Page Count</th>
+                <th>Average Rating</th>
+                <th></th>
+            </tr>
+            {% for quary in quaried %}
+            <tr>
+                <td><img src={{ quary.thumbnail }}></td>
+                <td>{{ quary.title }}</td>
+                <td>{{ quary.author }}</td>
+                <td>{{ quary.pageCount }}</td>
+                <td>{{ quary.averageRating }}</td>
+                <td><a
+                        href={{ url_for('add_book', title=quary.title, author=quary.author, pageCount=quary.pageCount, averageRating=quary.averageRating, thumbnail=quary.thumbnail) }}>Add</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+
+</html>
