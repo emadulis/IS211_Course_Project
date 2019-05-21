@@ -39,8 +39,8 @@ Option one:
 # python app.py
 
 or option two:
-#virtualenv -p python3 /. 
-#source bin/activate
+# virtualenv -p python3 /. 
+# source bin/activate
 # git clone https://github.com/IS211_Course_Project
 # cd IS211_Course_Project
 # pip install -r requirements.txt
