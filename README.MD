@@ -1,8 +1,7 @@
                                                        IS211 Course Project
-#############################################################################################################################################################
-
+###############################################################################################################
 # BOOK CATALOGUE APPLICATION 
-This application allows users with access only to log in and search books by either ISBN# or the Title then save the results to their personal book catalogue application. The root URL used for this app is http://127.0.0.1:5000/ and it is the website that launch an interactive web application. It utilizes Flask and SQLite3 to create a very interesting application. The application is built to establish query against the google book api and display the results. Once user successfuly query the book they wanted to add to their book store they will have an option to add the item into their book store. Also, the users can delete thier book from the app if they no longer own it or need it. 
+This application allows users to log in and search books by either ISBN# or the Title then save the results to their personal book catalogue application. The root URL used for this app is http://127.0.0.1:5000/ and it is the website that launch an interactive web application. It utilizes Flask and SQLite3 to create a very interesting interface. The application is built to establish query against the google book api and display the results. The successful query will allow users to add books to their book store. Also, the users can delete/add books as they wish. 
 
 ## Requirements.txt
    astroid==2.2.5
@@ -31,12 +30,23 @@ This application allows users with access only to log in and search books by eit
 
 ## Setup Repo
 ```
-virtualenv -p python3 /.
-source bin/activate
-git clone https://github.com/IS211_Course_Project
-cd IS211_Course_Project
-pip install -r requirements.txt
-python app.py
+Option one:
+# git clone https://github.com/IS211_Course_Project
+# cd IS211_Course_Project
+# pipenv shell
+# pip install -r requirements.txt
+# python load_schema.py
+# python app.py
+
+or option two:
+#virtualenv -p python3 /. 
+#source bin/activate
+# git clone https://github.com/IS211_Course_Project
+# cd IS211_Course_Project
+# pip install -r requirements.txt
+# python load_schema.py
+# python app.py
+
 ```
 Note this application was tested in python3, so make sure you are running it on python version 3 or make the necessary changes to run in on python version 2
 

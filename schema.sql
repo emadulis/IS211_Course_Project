@@ -19,3 +19,7 @@ create table users (
 insert into users (username, password) values ('admin', 'password');
 insert into users (username, password) values ('user1', 'myapp');
 insert into users (username, password) values ('jojo', 'myapp');
+
+ 		
+
+CREATE TABLE users (id INTEGER PRIMARY KEY ASC, username TEXT, email TEXT);
