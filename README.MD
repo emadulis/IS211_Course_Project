@@ -48,7 +48,7 @@ or option two:
 # python app.py
 
 ```
-Note this application was tested in python3, so make sure you are running it on python version 3 or make the necessary changes to run in on python version 2
+Note this application was tested in python3, so make sure you are running it on python version 3 or make the necessary changes to accomodate python version 2.
 
 
 ## Permitted users
