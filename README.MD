@@ -13,7 +13,7 @@ This application allows users to log in and search books by either ISBN# or the 
 ## Setup Repo
 ```
 Option one:
-# git clone https://github.com/IS211_Course_Project
+# git clone https://github.com/emadulis/IS211_Course_Project.git
 # cd IS211_Course_Project
 # pipenv shell
 # pip install -r requirements.txt
