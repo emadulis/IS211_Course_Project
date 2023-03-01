@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""This is a book catalogue application"""
+"""This is a book catalogue application that allows you create your own library"""
 
 from flask import Flask, render_template, request, redirect, session, g, flash, url_for
 import sqlite3
